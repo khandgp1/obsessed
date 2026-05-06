@@ -8,7 +8,7 @@ function startAutoPlay() {
     autoPlayTimer = setInterval(() => {
         const nextIndex = currentSlide === appData.length - 1 ? 0 : currentSlide + 1;
         switchSlide(nextIndex);
-    }, 4000);
+    }, 5000);
 }
 
 function resetAutoPlay() {
