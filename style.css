@@ -227,71 +227,7 @@ footer {
     text-transform: uppercase;
 }
 
-/* Password Overlay - Re-styled for dark mode */
-#password-overlay {
-    position: fixed;
-    inset: 0;
-    background: #000;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
 
-#password-overlay.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.password-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    padding: 50px;
-    border-radius: 24px;
-    border: 1px solid var(--border);
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-}
-
-.password-card h2 {
-    font-weight: 200;
-    letter-spacing: 4px;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#site-password-input {
-    padding: 15px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    text-align: center;
-}
-
-#submit-password {
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
 
 @media (max-width: 600px) {
     header { padding: 40px 20px 20px; }

@@ -1,4 +1,3 @@
-const SITE_PASSWORD = 'bernard';
 let appData = null;
 let currentSlide = 0;
 let autoPlayTimer = null;
@@ -115,41 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Password Protection Logic
-    const passwordOverlay = document.getElementById('password-overlay');
-    const passwordInput = document.getElementById('site-password-input');
-    const passwordSubmit = document.getElementById('submit-password');
-    const passwordError = document.getElementById('password-error');
-
-    // Check if password protection is enabled in config
-    if (window.APP_CONFIG && !window.APP_CONFIG.features.passwordProtection) {
-        if (passwordOverlay) passwordOverlay.classList.add('hidden');
-        return;
-    }
-
-    if (passwordSubmit && passwordInput) {
-        const handlePasswordSubmit = () => {
-            if (passwordInput.value === SITE_PASSWORD) {
-                passwordOverlay.classList.add('hidden');
-                passwordError.style.display = 'none';
-                init(); // Start the app after unlocking
-            } else {
-                passwordError.style.display = 'block';
-                passwordInput.value = '';
-                passwordInput.focus();
-            }
-        };
-
-        passwordSubmit.onclick = handlePasswordSubmit;
-        passwordInput.onkeydown = (e) => {
-            if (e.key === 'Enter') handlePasswordSubmit();
-        };
-
-        passwordInput.focus();
-    }
+    init();
 });
 
-// Start if not password protected
-if (!window.APP_CONFIG || !window.APP_CONFIG.features.passwordProtection) {
-    window.onload = init;
-}
+
