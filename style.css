@@ -294,7 +294,20 @@ footer {
 }
 
 @media (max-width: 600px) {
-    h1 { font-size: 2.5rem; }
-    .slide-container { padding: 40px 20px; min-height: 350px; }
-    .slide-text { font-size: 1.3rem; }
+    header { padding: 40px 20px 20px; }
+    h1 { font-size: 2rem; letter-spacing: 4px; }
+    .slide-container { padding: 30px 20px; min-height: 320px; }
+    .slide-text { font-size: 1.2rem; }
+    .nav-controls { margin-top: 25px; gap: 20px; }
+    .nav-btn { width: 44px; height: 44px; }
+}
+
+@media (max-width: 430px) {
+    main { padding: 10px; }
+    h1 { font-size: 1.8rem; letter-spacing: 3px; }
+    .slide-container { padding: 25px 10px; min-height: 280px; }
+    .slide-text { font-size: 1.1rem; }
+    .slide-title { font-size: 0.8rem; margin-bottom: 15px; }
+    .progress-container { width: 80px; margin: 0 10px; }
+    footer { padding: 20px; font-size: 0.6rem; }
 }

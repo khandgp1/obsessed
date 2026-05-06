@@ -45,7 +45,7 @@
   },
   {
     "title": "Passion",
-    "content": "I know you're passionate about the work you do. Helping people isn't just a career for you, it's personal. I know it goes back to living with your grandma."
+    "content": "I know you're passionate about the work you do. Helping people isn't just a career for you, it's personal. I know it goes back to lving with your grandma."
   },
   {
     "title": "Confident",
