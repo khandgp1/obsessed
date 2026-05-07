@@ -26,7 +26,8 @@ body {
 }
 
 /* Background Glows */
-body::before, body::after {
+body::before,
+body::after {
     content: '';
     position: fixed;
     width: 300px;
@@ -60,7 +61,7 @@ h1 {
     margin-bottom: 10px;
     font-weight: 200;
     text-transform: uppercase;
-    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.5) 100%);
+    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -74,7 +75,8 @@ h1 {
 }
 
 #tab-container {
-    display: none; /* Hide for slideshow */
+    display: none;
+    /* Hide for slideshow */
 }
 
 main {
@@ -144,6 +146,7 @@ main {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -230,20 +233,140 @@ footer {
 
 
 @media (max-width: 600px) {
-    header { padding: 40px 20px 20px; }
-    h1 { font-size: 2rem; letter-spacing: 4px; }
-    .slide-container { padding: 30px 20px; min-height: 320px; }
-    .slide-text { font-size: 1.2rem; }
-    .nav-controls { margin-top: 25px; gap: 20px; }
-    .nav-btn { width: 44px; height: 44px; }
+    header {
+        padding: 40px 20px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .slide-container {
+        padding: 30px 20px;
+        min-height: 320px;
+    }
+
+    .slide-text {
+        font-size: 1.2rem;
+    }
+
+    .nav-controls {
+        margin-top: 25px;
+        gap: 20px;
+    }
+
+    .nav-btn {
+        width: 44px;
+        height: 44px;
+    }
 }
 
 @media (max-width: 430px) {
-    main { padding: 10px; }
-    h1 { font-size: 1.8rem; letter-spacing: 3px; }
-    .slide-container { padding: 25px 10px; min-height: 280px; }
-    .slide-text { font-size: 1.1rem; }
-    .slide-title { font-size: 0.8rem; margin-bottom: 15px; }
-    .progress-container { width: 80px; margin: 0 10px; }
-    footer { padding: 20px; font-size: 0.6rem; }
+    main {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+    }
+
+    .slide-container {
+        padding: 25px 10px;
+        min-height: 280px;
+    }
+
+    .slide-text {
+        font-size: 1.1rem;
+    }
+
+    .slide-title {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    .progress-container {
+        width: 80px;
+        margin: 0 10px;
+    }
+
+    footer {
+        padding: 20px;
+        font-size: 0.6rem;
+    }
+}
+
+/* Lock Screen Overlay */
+#lock-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.lock-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 60px 40px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+    position: relative;
+    overflow: hidden;
+    animation: cardPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.lock-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+@keyframes cardPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.lock-content .quote {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0;
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 600px) {
+    .lock-card {
+        padding: 40px 25px;
+    }
+    .lock-content .quote {
+        font-size: 1.2rem;
+    }
 }
